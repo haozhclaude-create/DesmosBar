@@ -1,12 +1,12 @@
 # DesmosBar
 
-The Desmos graphing calculator in your Mac's menu bar. Click the ƒ icon (or press ⌘⌥D) and the calculator drops down; click away and it hides.
+The Desmos graphing calculator in your Mac's menu bar. Click the ƒ icon (or press ⌥D) and the calculator drops down; click away and it hides.
 
 Unofficial. This app only shows https://www.desmos.com/calculator in a small window. It is not made by or affiliated with Desmos, and it needs an internet connection.
 
 ## What it does
 
-- **Opens from anywhere**: click the ƒ menu bar icon, or press ⌘⌥D. Same again to hide.
+- **Opens from anywhere**: click the ƒ menu bar icon, or press ⌥D. Same again to hide.
 - **Stays open while you type elsewhere**: if you click into a text field (or onto text) in another app, the calculator stays so you can copy numbers across. Click a blank area and it hides.
 - **Movable**: drag the grabber at the top, drag the empty middle of the dark Desmos header, or hold ⌘ and drag anywhere. It reopens under the icon next time.
 - **Floats above other windows**, with no Dock icon.
@@ -30,7 +30,7 @@ To start it at login, add DesmosBar in System Settings → General → Login Ite
 
 ## Notes
 
-- ⌘⌥D is also the macOS shortcut for hiding the Dock. If the Dock moves when you press it, turn that shortcut off in System Settings → Keyboard → Keyboard Shortcuts → Launchpad & Dock.
+- ⌥D is taken over everywhere while DesmosBar runs, so it no longer types its usual character (∂ on the U.S. layout), and in a terminal with "Use Option as Meta" it no longer deletes a word.
 - The draggable part of the Desmos header is measured from the current Desmos page layout. If Desmos redesigns its header, that spot may shift; the top grabber and ⌘-drag keep working.
 - Tested on macOS 27 only.
 

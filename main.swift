@@ -97,13 +97,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return nil
         }
 
-        // Cmd+Option+D anywhere toggles the calculator (Carbon hotkey: no extra permission, swallows the keys).
+        // Option+D anywhere toggles the calculator (Carbon hotkey: no extra permission, swallows the keys).
         var spec = EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: UInt32(kEventHotKeyPressed))
         InstallEventHandler(GetApplicationEventTarget(), { _, _, _ in
             DispatchQueue.main.async { delegate.toggle() }
             return noErr
         }, 1, &spec, nil, nil)
-        RegisterEventHotKey(UInt32(kVK_ANSI_D), UInt32(cmdKey | optionKey),
+        RegisterEventHotKey(UInt32(kVK_ANSI_D), UInt32(optionKey),
                                      EventHotKeyID(signature: OSType(0x44534D42), id: 1),
                                      GetApplicationEventTarget(), 0, &hotKey)
     }
