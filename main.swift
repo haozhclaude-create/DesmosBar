@@ -77,8 +77,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             // Menu bar icon clicks also land here; leave those to clicked().
             if let b = self.statusItem.button, let w = b.window,
                w.convertToScreen(b.convert(b.bounds, to: nil)).contains(NSEvent.mouseLocation) { return }
+            // Chrome and Electron apps hide their focus from the Accessibility API, so also treat
+            // a click made with the I-beam (text) cursor as "clicked into text".
+            let onText = Self.cursorIsIBeam()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {  // let the other app move focus first
-                if !Self.focusIsTextInput() { self.panel.orderOut(nil) }
+                if !(onText || Self.focusIsTextInput()) { self.panel.orderOut(nil) }
             }
         }
 
@@ -106,6 +109,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     static let systemWide = AXUIElementCreateSystemWide()
+
+    // shortcut: matches the system I-beam by size and hot spot; apps drawing their own text cursor won't match
+    static func cursorIsIBeam() -> Bool {
+        guard let c = NSCursor.currentSystem else { return false }
+        return c.hotSpot == NSCursor.iBeam.hotSpot && c.image.size == NSCursor.iBeam.image.size
+    }
 
     static func focusIsTextInput() -> Bool {
         var ref: CFTypeRef?

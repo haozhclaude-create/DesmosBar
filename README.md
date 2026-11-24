@@ -7,7 +7,7 @@ Unofficial. This app only shows https://www.desmos.com/calculator in a small win
 ## What it does
 
 - **Opens from anywhere**: click the ƒ menu bar icon, or press ⌘⌥D. Same again to hide.
-- **Stays open while you type elsewhere**: if you click into a text field in another app, the calculator stays so you can copy numbers across. Click a blank area and it hides.
+- **Stays open while you type elsewhere**: if you click into a text field (or onto text) in another app, the calculator stays so you can copy numbers across. Click a blank area and it hides.
 - **Movable**: drag the grabber at the top, drag the empty middle of the dark Desmos header, or hold ⌘ and drag anywhere. It reopens under the icon next time.
 - **Floats above other windows**, with no Dock icon.
 - **Quit**: right-click the ƒ icon.
